@@ -1,13 +1,8 @@
 :root {
-  --primary: #000000;
-  --secondary: bisque;
+  --primary: #ffffff;
+  --secondary: #3366ff;
   --dot_size: 25px;
-}
-
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
+  --item_gap: 20px;
 }
 
 .rh-list-container {
@@ -23,7 +18,7 @@
 
 .rh-list-container ul {
   display: flex;
-  gap: 20px;
+  gap: var(--item_gap);
   list-style-type: none;
   padding-inline-start: 0px;
   height: 100%;
@@ -49,7 +44,8 @@
 }
 
 .rh-list-container ul li.active .timeline-dot {
-  background: #000000;
+  border: calc(var(--dot_size) - 20px) solid var(--secondary);
+  background: var(--primary);
 }
 
 .rh-list-container ul li .timeline-title {
@@ -66,4 +62,16 @@
   left: 0;
   top: 50%;
   transform: translateY(-50%);
+}
+
+/* Button styles */
+.rh-list-container button {
+  width: calc(var(--dot_size) + 10px);
+  height: calc(var(--dot_size) + 10px);
+  padding: 10px;
+  background: var(--primary);
+  color: var(--secondary);
+  border: 2px solid var(--secondary);
+  border-radius: 100%;
+  cursor: pointer;
 }
